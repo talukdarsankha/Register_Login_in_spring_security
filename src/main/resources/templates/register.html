@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+th:replace="baase::Layout(~{::body})" >
+
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<th:block th:if="${session.msg}">
+	<h3>[[${session.msg}]]</h3>
+	
+<th:block th:text="${@userServiceImpl.removeSessoin()}">
+</th:block>
+</th:block>
+
+<div style="margin: 30px; padding: 40px; width: 600px;" >
+<form  action="registerUser" method="post">
+	<div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Full name</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="name">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+     </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+  </div>
+  
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Mob No:</label>
+    <input type="number" class="form-control" id="exampleInputPassword1" name="mobile">
+  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+
+</body>
+</html>
